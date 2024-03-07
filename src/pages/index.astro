@@ -1,55 +1,64 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from "../components/Header.astro";
+import Header from '../components/Header.astro';
 
-const postsData = (await Astro.glob("./posts/**/*.md")).reverse();
+const postsData = (await Astro.glob('./posts/**/*.md')).reverse();
 ---
 
 <Layout title="m1sk9's blog">
-	<main class="container">
-		<Header/>
-		{postsData.map((post) => (
-			<article>
-				<h3><a href={
-					post.url ?? (() => {
-						throw new Error(`url of ${post.file} is undefined`);
-					})()
-				}>{post.frontmatter.title}</a></h3>
-				<p>{post.frontmatter.description}</p>
-			</article>
-		))}
-		<footer>
-			<p>
-				&copy; {new Date().getFullYear()} m1sk9
-			</p>
-		</footer>
-	</main>
+  <main class="container">
+    <Header />
+    {
+      postsData.map((post) => (
+        <article>
+          <h3>
+            <a
+              href={
+                post.url ??
+                (() => {
+                  throw new Error(`url of ${post.file} is undefined`);
+                })()
+              }
+            >
+              {post.frontmatter.title}
+            </a>
+          </h3>
+          <p>{post.frontmatter.description}</p>
+        </article>
+      ))
+    }
+    <footer>
+      <p>
+        &copy; {new Date().getFullYear()} m1sk9
+      </p>
+    </footer>
+  </main>
 </Layout>
 
 <style>
-	.container {
-		width: 80%;
-		margin: 0 auto;
-		color: white;
-	}
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+  }
 
-	article h3 a {
-		color: aqua;
-		text-decoration: none;
-	}
+  article h3 a {
+    color: aqua;
+    text-decoration: none;
+  }
 
-	article p {
-		margin-top: auto;
-		font-size: 20px;
-	}
+  article p {
+    margin-top: auto;
+    font-size: 20px;
+  }
 
-	article h3 a:hover {
-		text-decoration: underline;
-	}
+  article h3 a:hover {
+    text-decoration: underline;
+  }
 
-	footer {
-		align-items: flex-end;
-		margin-top: 30px;
-		border-top: 1px solid white;
-	}
+  footer {
+    align-items: flex-end;
+    margin-top: 30px;
+    border-top: 1px solid white;
+  }
 </style>
