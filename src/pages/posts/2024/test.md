@@ -1,6 +1,7 @@
 ---
 layout: "../../../layouts/Blog.astro"
 date: "2024-09-02"
+emoji: "📝"
 title: "テスト"
 description: "テスト"
 ---

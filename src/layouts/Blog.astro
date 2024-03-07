@@ -6,22 +6,24 @@ interface Props {
     frontmatter: {
         title: string;
         date: string
+        emoji: string;
         description: string;
     }
 }
 
-const { title, date, description } = Astro.props.frontmatter;
+const { title, date, emoji, description } = Astro.props.frontmatter;
 ---
 
 <Layout title={title}>
     <div class="container">
         <Header/>
         <div class="metadata">
-            <p>{date}</p>
-            <h1>{title}</h1>
+            <h1>{emoji}</h1>
+            <h2>{title}</h2>
             <p>{description}</p>
         </div>
         <div class="content">
+            <p class="date">投稿日: {date}</p>
             <article>
                 <slot/>
             </article>
@@ -40,11 +42,16 @@ const { title, date, description } = Astro.props.frontmatter;
         color: white;
     }
 
+    .date {
+        font-size: 0.8em;
+        color: gray;
+        text-decoration: underline;
+    }
+
     .metadata {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.015rem;
         border-bottom: 1px solid gray;
     }
 
