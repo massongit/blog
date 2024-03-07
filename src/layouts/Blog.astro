@@ -1,0 +1,122 @@
+---
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+
+interface Props {
+    frontmatter: {
+        title: string;
+        date: string
+        emoji: string;
+        description: string;
+    }
+}
+
+const { title, date, emoji, description } = Astro.props.frontmatter;
+---
+
+<Layout title={title}>
+    <div class="container">
+        <Header/>
+        <div class="metadata">
+            <h1>{emoji}</h1>
+            <h2>{title}</h2>
+            <p>{description}</p>
+        </div>
+        <div class="content">
+            <p class="date">投稿日: {date}</p>
+            <article>
+                <slot/>
+            </article>
+        </div>
+        <footer>
+            <p>&copy; {new Date().getFullYear()} m1sk9</p>
+        </footer>
+    </div>
+</Layout>
+
+<style>
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        color: white;
+    }
+
+    .date {
+        font-size: 0.8em;
+        color: gray;
+        text-decoration: underline;
+    }
+
+    .metadata {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid gray;
+    }
+
+    .content {
+        margin-top: 10px;
+    }
+
+    footer {
+        margin-top: 30px;
+        align-items: flex-start;
+        border-top: 1px solid white;
+    }
+
+    article :global(h1) {
+        font-size: 1.5em;
+        border-bottom: 1px solid gray;
+    }
+
+    article :global(h2) {
+        font-size: 1.25em;
+        border-bottom: 1px solid gray;
+    }
+
+    article :global(h3) {
+        font-size: 1.00em;
+        border-bottom: 1px solid gray;
+    }
+
+    article :global(p) {
+        text-align: justify;
+        font-size: 1rem;
+    }
+
+    article :global(hr) {
+        border-top: 1px solid gray
+    }
+
+    article :global(ul) {
+        list-style: disc;
+    }
+
+    article :global(img) {
+        width: 900px;
+        height: 900px;
+    }
+
+    article :global(ol) {
+        list-style: decimal;
+    }
+
+    article :global(blockquote) {
+        border-left: 3px solid gray;
+        padding-left: 10px;
+    }
+
+    article :global(a) {
+        color: aqua;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+        article :global(img) {
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+</style>
