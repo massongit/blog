@@ -9,23 +9,31 @@ const postsData = (await Astro.glob('./posts/**/*.md')).reverse();
   <main class="container">
     <Header />
     {
-      postsData.map((post) => (
-        <article>
-          <h3>
-            <a
-              href={
-                post.url ??
-                (() => {
-                  throw new Error(`url of ${post.file} is undefined`);
-                })()
-              }
-            >
-              {post.frontmatter.title}
-            </a>
-          </h3>
-          <p>{post.frontmatter.description}</p>
-        </article>
-      ))
+      postsData
+        .sort(
+          (a, b) =>
+            new Date(b.frontmatter.date).getTime() -
+            new Date(a.frontmatter.date).getTime()
+        )
+        .map((post) => (
+          <article>
+            <h3>
+              <a
+                href={
+                  post.url ??
+                  (() => {
+                    throw new Error(`url of ${post.file} is undefined`);
+                  })()
+                }
+              >
+                {post.frontmatter.title}
+              </a>
+            </h3>
+            <p>
+              {post.frontmatter.date} - {post.frontmatter.description}
+            </p>
+          </article>
+        ))
     }
     <footer>
       <p>
