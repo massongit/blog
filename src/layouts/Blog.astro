@@ -14,7 +14,7 @@ interface Props {
 const { title, date, emoji, description } = Astro.props.frontmatter;
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   <div class="container">
     <Header />
     <div class="metadata">

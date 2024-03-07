@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 const postsData = (await Astro.glob('./posts/**/*.md')).reverse();
 ---
 
-<Layout title="m1sk9's blog">
+<Layout title="m1sk9's blog" description="m1sk9 のブログサイトです">
   <main class="container">
     <Header />
     {
