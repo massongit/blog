@@ -8,19 +8,30 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "bunx @biomejs/biome format --write ./src",
-    "lint": "bunx @biomejs/biome lint ./src",
-    "check": "bunx @biomejs/biome check ./src",
-    "check:apply": "bunx @biomejs/biome check --apply ./src",
+    "format": "prettier --write \"./src/**/*.astro\"",
+    "format:check": "prettier --check \"./src/**/*.astro\"",
+    "lint": "eslint \"./src/**/*.astro\"",
+    "lint:fix": "eslint --fix \"./src/**/*.astro\"",
+    "stylelint": "stylelint \"./src/**/*.astro\"",
+    "stylelint:fix": "stylelint --fix \"./src/**/*.astro\"",
     "postinstall": "lefthook install"
   },
   "dependencies": {
-    "astro": "^4.4.13",
     "@astrojs/check": "^0.5.6",
-    "typescript": "^5.4.2"
+    "astro": "^4.4.13",
+    "eslint": "^8.57.0",
+    "eslint-plugin-astro": "^0.31.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.3",
-    "lefthook": "^1.6.5"
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "lefthook": "^1.6.5",
+    "postcss-html": "^1.6.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "stylelint": "^16.2.1",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "typescript": "5.3.3"
   }
 }
