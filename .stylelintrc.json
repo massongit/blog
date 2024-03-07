@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-html/astro"
+  ],
+  "rules": {
+    "selector-pseudo-class-no-unknown": null
+  }
+}

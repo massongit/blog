@@ -2,7 +2,7 @@ pre-commit:
   commands:
     check:
       glob: "*.astro"
-      run: bun run check
+      run: bun run format:check
     lint:
       glob: "*.astro"
       run: bun run lint
