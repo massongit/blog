@@ -94,8 +94,8 @@ const { title, date, emoji, description } = Astro.props.frontmatter;
   }
 
   article :global(img) {
-    width: 900px;
-    height: 900px;
+    width: auto;
+    height: auto;
   }
 
   article :global(ol) {
@@ -114,8 +114,8 @@ const { title, date, emoji, description } = Astro.props.frontmatter;
 
   @media (width <= 600px) {
     article :global(img) {
-      width: 300px;
-      height: 300px;
+      width: auto;
+      height: auto;
     }
   }
 </style>
