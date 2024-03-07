@@ -1,5 +1,11 @@
 pre-commit:
   commands:
     check:
-      glob: "*.{ts,tsx}"
-      run: bun run check
+      glob: "*.astro"
+      run: bun run format:check
+    lint:
+      glob: "*.astro"
+      run: bun run lint
+    stylelint:
+      glob: "*.{astro,css}"
+      run: bun run stylelint
