@@ -12,7 +12,7 @@ description: "denoland/deno_blog はちょっとキツかった"
 
 もともと技術系のことは Zenn とかに書いてたんだけど (Qiita? なにそれ) プログラミングのことからかけ離れたことを書きたいときとか, ちょっと思想に問題があることを自由に書きたいときに困ったからっていうのが主な理由なんだけど, それ以前に Deno っていうのがちょっとキツかった.
 
-実は Deno, [Pulsate っていう分散型SNS](../2023/about-pulsate) の開発に採用したことがあったんだけど Import URL っていう設計思想が特殊すぎるのか, Renovate を使うことが出来ないという問題があって Node.js にした過去があり, また旧ブログサイトで使っていた Deno 公式のライブラリ [deno_blog] はコードブロックが使えなくてこれまた技術系ブログとは到底言えないものになっていたというのが2つめの理由. (なぜか JavaScript のコードブロックはレンダリングされてたので **そういうこと** か)
+実は Deno, [Pulsate っていう分散型SNS](../2023/about-pulsate) の開発に採用したことがあったんだけど Import URL っていう設計思想が特殊すぎるのか, Renovate を使うことが出来ないという問題があって Node.js にした過去があり, また旧ブログサイトで使っていた Deno 公式のライブラリ [deno_blog](https://github.com/denoland/deno_blog) はコードブロックが使えなくてこれまた技術系ブログとは到底言えないものになっていたというのが2つめの理由. (なぜか JavaScript のコードブロックはレンダリングされてたので **そういうこと** か)
 
 今はコードブロックも使えるぞ〜!
 
@@ -40,7 +40,7 @@ define_model!(pub GPT35Turbo: "gpt-3.5-turbo-0125", rate = req 0.0010, res 0.002
 
 ## 技術スタック
 
-**[You Don't Need Next.js](https://www.docswell.com/s/ashphy/KM1NQ6-you-dont-need-nextjs)** っていうことで Node.js は使いませんでした ([ポートフォリオ](https://m1sk9.dev) はガッツリ Node.js 使ってる. PandaCSS 最高〜〜〜)
+**[You Don't Need Next.js](https://www.docswell.com/s/ashphy/KM1NQ6-you-dont-need-nextjs)** っていうことで Next.js は使いませんでした ([ポートフォリオ](https://m1sk9.dev) はガッツリ Next.js 使ってる. PandaCSS 最高〜〜〜)
 
 前々から気になっていた Astro を使っています. めっちゃ簡単. `Astro.glob()` でMarkdown のデータを取得できるのが凄く画期的で流石に気持ちよかったよね. ([ドキュメント曰く色んなものを import できるらしい.](https://docs.astro.build/ja/guides/imports/))
 
