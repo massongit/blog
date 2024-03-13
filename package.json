@@ -2,6 +2,7 @@
   "name": "blog",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "bun@1.0.30",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
