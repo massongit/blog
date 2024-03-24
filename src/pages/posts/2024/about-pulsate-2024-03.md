@@ -91,7 +91,7 @@ Pulsate Project は Rust のチームモデルを参考にし組織を構築し�
 
 Pulsate Project に興味を持っていただけた方は, ぜひいずれかの方法でご連絡ください:
 
-- [公式Discord](https://link.pulsate.dev/discord) に参加し, `info@pulsate.dev` に Discord のユーザー名 & GitHub へのプロフィール を記載してメールを送信.
+- [公式Discord](https://link.pulsate.dev/discord) に参加し, `@laminne` に GitHub へのプロフィール を記載してDMを送信.
 - コアチームメンバーの [Meru (m1sk9)](https://twitter.com/m1s2r8) か [laminne33](https://twitter.com/laminne33) にDMを送信.
 
 ## おわりに
