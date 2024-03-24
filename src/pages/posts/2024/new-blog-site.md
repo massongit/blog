@@ -74,7 +74,7 @@ const postsData = (await Astro.glob('./posts/**/*.md')).reverse();
 
 ビルドが速すぎる. ビビったよ.
 
-![Astro のビルド時の様子.](./public/new-blog-site/astro-build.png)
+![Astro のビルド時の様子.](../../../../public/posts/new-blog-site/astro-build.png)
 
 ### Node.js? Deno? pnpm? パッケージマネージャーと Runtime って Bun 以外にあったっけ?
 
